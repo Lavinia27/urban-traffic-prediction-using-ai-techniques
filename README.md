@@ -46,31 +46,33 @@ The following diagram summarizes the methodology used throughout the project.
 
 ```text
 .
-├── LSTM.ipynb
-├── LSTM-PSO.ipynb
-├── LSTM-WOA.ipynb
-│
-├── GRU.ipynb
-├── GRU-PSO.ipynb
-├── GRU-WOA.ipynb
-│
-├── STGCN.ipynb
-├── STGCN-PSO.ipynb
-├── STGCN-WOA.ipynb
-│
-├── STGCN-Attention.ipynb
-├── STGCN-Attention-PSO.ipynb
-├── STGCN-Attention-WOA.ipynb
-│
-├── matrice_adiacenta.ipynb
+├── notebook
+│   ├── LSTM.ipynb
+│   ├── LSTM-PSO.ipynb
+│   ├── LSTM-WOA.ipynb
+│   │
+│   ├── GRU.ipynb
+│   ├── GRU-PSO.ipynb
+│   ├── GRU-WOA.ipynb
+│   │
+│   ├── STGCN.ipynb
+│   ├── STGCN-PSO.ipynb
+│   ├── STGCN-WOA.ipynb
+│   │
+│   ├── STGCN-Attention.ipynb
+│   ├── STGCN-Attention-PSO.ipynb
+│   ├── STGCN-Attention-WOA.ipynb
+│   │
+│   ├── matrice_adiacenta.ipynb
 │
 ├── images
 │   ├── workflow.png
 │   ├── model_comparison.png
 │   ├── prediction_comparison.png
 │   ├── lstm_prediction.png
-│   ├── stgcn_prediction.png
-│   └── stgcn_attention_prediction.png
+│   ├── stgcn_attention_prediction.png
+│   ├── best_sensor.png
+│   └── worst_sensor.png
 │
 ├── README.md
 ├── requirements.txt
@@ -101,6 +103,26 @@ Among all tested configurations, **STGCN-Attention-WOA** achieved the best overa
 
 Hyperparameter optimization significantly improved the recurrent models, whereas its impact on the graph-based architectures was more moderate, indicating that the STGCN models were already relatively robust to the selected hyperparameters.
 
+### Example – LSTM-PSO
+
+<p align="center">
+  <img src="images/lstm_prediction.png" width="850">
+</p>
+
+Example of traffic speed prediction using the optimized LSTM model.
+
+---
+
+### Example – STGCN-Attention-WOA
+
+<p align="center">
+  <img src="images/stgcn_attention_prediction.png" width="850">
+</p>
+
+Example of traffic speed prediction using the best-performing model evaluated in this project.
+
+---
+
 ### Model Comparison
 
 <p align="center">
@@ -117,19 +139,28 @@ The figure compares the best-performing configurations using the evaluation metr
 
 Comparison between the predicted and actual traffic speed for the best-performing models.
 
-### Example – LSTM-PSO
+---
+
+### Best Performing Sensor
 
 <p align="center">
-  <img src="images/lstm_prediction.png" width="850">
+  <img src="images/best_sensor.png" width="850">
 </p>
 
-### Example – STGCN-Attention-WOA
-
-<p align="center">
-  <img src="images/stgcn_attention_prediction.png" width="850">
-</p>
+Prediction results obtained for the sensor with the lowest prediction error.
 
 ---
+
+### Most Challenging Sensor
+
+<p align="center">
+  <img src="images/worst_sensor.png" width="850">
+</p>
+
+Prediction results obtained for the sensor with the highest prediction error, illustrating the model's behavior under more challenging traffic conditions.
+
+---
+
 
 ## Future Improvements
 
@@ -144,8 +175,28 @@ Possible extensions of this project include:
 
 ---
 
+## Getting Started
+
+### Clone the repository
+
+```bash
+git clone https://github.com/USERNAME/urban-traffic-prediction-ai.git
+cd urban-traffic-prediction-ai
+```
+
+### Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### Run the notebooks
+
+Open the notebooks in Jupyter Notebook or JupyterLab and execute the cells in order.
+
+Each notebook represents an independent experiment for one model configuration.
+
+
 ## About
 
-This repository contains the implementation developed for my Bachelor's thesis in Systems Engineering at **Gheorghe Asachi Technical University of Iași**.
-
-The project provided practical experience in deep learning, graph neural networks, hyperparameter optimization, and machine learning workflows for time-series forecasting.
+This project gave me hands-on experience with deep learning, graph neural networks, hyperparameter optimization, and the complete workflow of developing, training, and evaluating machine learning models for time-series forecasting. It also strengthened my understanding of designing reproducible experiments and comparing different model architectures under a common evaluation framework.
