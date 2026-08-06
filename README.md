@@ -91,6 +91,7 @@ Each notebook contains the complete implementation of one experimental configura
 - NumPy
 - Pandas
 - Matplotlib
+- Scikit-learn
 - CUDA
 
 ---
